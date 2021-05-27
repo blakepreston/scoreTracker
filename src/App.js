@@ -1,6 +1,7 @@
 import './App.css';
 import {useState} from 'react';
 import Axios from 'axios';
+import logo from './logo.png';
 
 function App() {
 
@@ -24,19 +25,24 @@ function App() {
   }
 
   return (
-    <div className = "app">
+      <div className = "app">
+
+      <div className = "logoImage">
+        <img src={logo} alt="" />
+      </div>
+        
       <div className = "information">
-        <label htmlFor="">Name</label>
+        <label htmlFor="">Course Name</label>
         <input type="text" onChange={(event) => {
           setName(event.target.value);
         }} />
 
-        <label htmlFor="">Age</label>
+        <label htmlFor="">Score</label>
         <input type="number" onChange={(event) => {
           setAge(event.target.value);
         }} />
 
-        <label htmlFor="">Position</label>
+        <label htmlFor="">Notes</label>
         <input type="text" onChange={(event) => {
           setPosition(event.target.value);
         }} />
