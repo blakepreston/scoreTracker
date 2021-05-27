@@ -81,3 +81,14 @@ button {
   justify-content: center;
   width: 100%;
 }
+
+.logoImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoImage img {
+  height: 12vh;
+  margin-top: 3vh;
+}
