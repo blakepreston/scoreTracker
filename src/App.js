@@ -12,16 +12,28 @@ function App() {
   const[dataList, setDataList] = useState([]);
 
   const addElement = () => {
+    //Axios.post("http://localhost:3001/create", {name: name, age: age, position: position}).then(() => {
     Axios.post("https://golftracking.herokuapp.com/create", {name: name, age: age, position: position}).then(() => {
       console.log("Success");
     });
   };
 
   const getData = () => {
+    //Axios.get("http://localhost:3001/data").then((response) => {
     Axios.get("https://golftracking.herokuapp.com/data").then((response) => {
       console.log(response);
       setDataList(response.data);
     });
+  }
+
+  const deleteEntry = (name) =>{
+    //Axios.delete(`http://localhost:3001/delete/${name}`).then((response) => {
+    Axios.delete(`https://golftracking.herokuapp.com/delete/${name}`).then((response) => {
+      setDataList(dataList.filter((val) => {
+        return val.name !== name;
+      }))
+    });
+    //Axios.delete(`http://localhost:3000/delete/${name}`);
   }
 
   return (
@@ -53,7 +65,12 @@ function App() {
         <div className="dataShow">
           <button onClick={getData}>Show Data</button>
           {dataList.map((val, key) => {
-            return <div> {val.name} {val.age} {val.position} </div>
+            return <div className="dataLayout"> 
+              <h2>{val.name} </h2>
+              <h2>{val.age} </h2>
+              <h2>{val.position}</h2>
+              <button onClick={deleteEntry(val.name)}>Delete</button>
+              </div>
           })}
         </div>
         

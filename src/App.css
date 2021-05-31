@@ -82,6 +82,23 @@ button {
   width: 100%;
 }
 
+.dataLayout {
+  display: flex;
+  flex-direction: row;
+  border: #282c34 5px solid;
+  margin: 15px;
+}
+
+.dataLayout h2 {
+  margin: 15px;
+}
+
+.dataLayout button {
+  display: flex;
+  justify-content: center;
+  height: 25px;
+}
+
 .logoImage {
   display: flex;
   align-items: center;
