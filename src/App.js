@@ -30,7 +30,7 @@ function App() {
     //Axios.delete(`http://localhost:3001/delete/${name}`).then((response) => {
     Axios.delete(`https://golftracking.herokuapp.com/delete/${name}`).then((response) => {
       setDataList(dataList.filter((val) => {
-        return val.name !== name;
+        return val.name != name;
       }))
     });
     //Axios.delete(`http://localhost:3000/delete/${name}`);
