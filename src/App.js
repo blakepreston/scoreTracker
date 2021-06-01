@@ -12,25 +12,29 @@ function App() {
   const[dataList, setDataList] = useState([]);
 
   const addElement = () => {
-    //Axios.post("http://localhost:3001/create", {name: name, age: age, position: position}).then(() => {
+    /// Axios.post("http://localhost:3001/create", {name: name, age: age, position: position}).then(() => {
     Axios.post("https://golftracking.herokuapp.com/create", {name: name, age: age, position: position}).then(() => {
       console.log("Success");
     });
   };
 
   const getData = () => {
-    //Axios.get("http://localhost:3001/data").then((response) => {
+    // Axios.get("http://localhost:3001/data").then((response) => {
     Axios.get("https://golftracking.herokuapp.com/data").then((response) => {
       console.log(response);
       setDataList(response.data);
     });
   }
 
-  const deleteEntry = (name) =>{
-    //Axios.delete(`http://localhost:3001/delete/${name}`).then((response) => {
-    Axios.delete(`https://golftracking.herokuapp.com/delete/${name}`);
-    //Axios.delete(`http://localhost:3000/delete/${name}`);
-  }
+  const deleteEntry = (id) =>{
+    // Axios.delete(`http://localhost:3001/delete/${id}`).then((response) => {
+    Axios.delete(`https://golftracking.herokuapp.com/delete/${name}`).then((response) => {
+        setDataList(dataList.filter((val) => {
+          return val.id != id;
+          // return val.name != name;
+        }))
+      });
+    }
 
   return (
       <div className = "app">
@@ -65,7 +69,8 @@ function App() {
               <h2>{val.name} </h2>
               <h2>{val.age} </h2>
               <h2>{val.position}</h2>
-              <button onClick={deleteEntry(val.name)}>Delete</button>
+              <button onClick={deleteEntry(val.id)}>Delete</button>
+              {/* <button onClick={deleteEntry}>Delete</button> */}
               </div>
           })}
         </div>
