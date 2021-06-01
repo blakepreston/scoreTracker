@@ -28,7 +28,7 @@ function App() {
 
   const deleteEntry = (id) =>{
     // Axios.delete(`http://localhost:3001/delete/${id}`).then((response) => {
-    Axios.delete(`https://golftracking.herokuapp.com/delete/${name}`).then((response) => {
+    Axios.delete(`https://golftracking.herokuapp.com/delete/${id}`).then((response) => {
         setDataList(dataList.filter((val) => {
           return val.id != id;
           // return val.name != name;
