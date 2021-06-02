@@ -16,6 +16,7 @@ function App() {
     Axios.post("https://golftracking.herokuapp.com/create", {name: name, age: age, position: position}).then(() => {
       console.log("Success");
     });
+
   };
 
   const getData = () => {
@@ -54,7 +55,7 @@ function App() {
           setAge(event.target.value);
         }} />
 
-        <label htmlFor="">Notes</label>
+        <label htmlFor="">Course Notes</label>
         <input type="text" onChange={(event) => {
           setPosition(event.target.value);
         }} />
