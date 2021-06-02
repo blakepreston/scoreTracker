@@ -69,7 +69,7 @@ function App() {
             return <div className="dataLayout"> 
               <h2>{val.name} </h2>
               <h2>{val.age} </h2>
-              <h2>{val.position}</h2>
+              <h3>{val.position}</h3>
               <button onClick={ () => {deleteEntry(val.id);}}>Delete</button>
               {/* <button onClick={deleteEntry}>Delete</button> */}
               </div>
