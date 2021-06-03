@@ -103,7 +103,7 @@ button {
   margin: 20px;
   padding: 5px;
   padding-right: 20px;
-  width: 40%;
+  width: 80vw;
 }
 
 .dataLayout h2 {
@@ -113,7 +113,7 @@ button {
 .dataLayout h3 {
   margin: 15px;
   margin-top: 18px;
-  width: 20%;
+  /* width: 40vw; */
 }
 
 .dataLayout button {
@@ -132,4 +132,12 @@ button {
 .logoImage img {
   height: 12vh;
   margin-top: 3vh;
+}
+
+@media only screen and (max-width: 600px) {
+  .dataLayout {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
